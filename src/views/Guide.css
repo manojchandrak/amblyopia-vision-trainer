@@ -1,0 +1,14 @@
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.faq-item p {
+  margin: 0;
+}

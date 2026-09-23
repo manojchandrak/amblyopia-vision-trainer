@@ -1,0 +1,39 @@
+.settings-card {
+  margin-top: 20px;
+}
+
+.settings-card h3 {
+  margin: 0 0 8px;
+}
+
+.settings-desc {
+  font-size: 0.88rem;
+  margin: 0 0 16px;
+}
+
+.glasses-test {
+  position: relative;
+  height: 120px;
+  background: #050508;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-dot {
+  position: absolute;
+  font-size: 3rem;
+  line-height: 1;
+  mix-blend-mode: screen;
+}
+
+.test-red {
+  color: var(--anaglyph-red);
+  transform: translateX(-6px);
+}
+
+.test-blue {
+  color: var(--anaglyph-blue);
+  transform: translateX(6px);
+}

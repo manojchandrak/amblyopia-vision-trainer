@@ -1,0 +1,68 @@
+.pursuit-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background: radial-gradient(circle at 50% 30%, #1c1030, #05030a);
+  overflow: hidden;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+  color: #fff;
+  background: rgba(5, 3, 10, 0.55);
+  z-index: 5;
+}
+
+.stage-overlay p {
+  color: #e6e2f4;
+  max-width: 340px;
+  margin: 0;
+}
+
+.hud {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 4px 12px;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.firefly {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(255, 200, 80, 0.4));
+  transition: filter 0.15s ease;
+  line-height: 1;
+  padding: 10px;
+}
+
+.firefly.flash {
+  filter: drop-shadow(0 0 18px gold) drop-shadow(0 0 30px gold);
+  animation: pulse 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}

@@ -1,0 +1,66 @@
+.scan-stage {
+  position: relative;
+  padding: 20px;
+  background: var(--surface);
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+  background: var(--surface);
+  z-index: 5;
+}
+
+.stage-overlay p {
+  max-width: 340px;
+  margin: 0;
+}
+
+.hud {
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.scan-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.scan-cell {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: Georgia, 'Times New Roman', serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan-cell:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.scan-cell.found {
+  background: var(--success-soft);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.scan-cell:disabled {
+  cursor: default;
+}

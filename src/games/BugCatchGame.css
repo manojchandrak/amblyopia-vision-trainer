@@ -1,0 +1,69 @@
+.bug-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background: #000;
+  overflow: hidden;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 5;
+}
+
+.stage-overlay p {
+  color: #ddd;
+  max-width: 340px;
+  margin: 0;
+}
+
+.hud {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.bug {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  mix-blend-mode: screen;
+  animation: skitter 1.7s linear;
+}
+
+.bug.weak-eye svg {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+@keyframes skitter {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 4px;
+  }
+  75% {
+    margin-left: -4px;
+  }
+}

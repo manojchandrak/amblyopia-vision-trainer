@@ -1,0 +1,105 @@
+.focus-stage {
+  position: relative;
+  padding: 24px 20px;
+  background: var(--surface);
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+  background: var(--surface);
+  z-index: 5;
+}
+
+.stage-overlay p {
+  max-width: 340px;
+  margin: 0;
+}
+
+.hud {
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.distance-label.far {
+  color: var(--accent);
+}
+
+.distance-label.near {
+  color: var(--accent-2);
+}
+
+.letter-zone {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+}
+
+.target-letter {
+  font-weight: 800;
+  color: var(--text);
+  transition: font-size 0.25s ease;
+}
+
+.letter-zone.far .target-letter {
+  font-size: 1.6rem;
+}
+
+.letter-zone.near .target-letter {
+  font-size: 5.5rem;
+}
+
+.choice-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.choice-letter {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.choice-letter:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.choice-letter.correct {
+  background: var(--success-soft);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.choice-letter.wrong {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.choice-letter:disabled {
+  cursor: default;
+}
