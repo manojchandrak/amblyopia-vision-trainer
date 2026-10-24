@@ -14,6 +14,12 @@ import SpotShapeGame from './games/SpotShapeGame'
 import AnaglyphMazeGame from './games/AnaglyphMazeGame'
 import BugCatchGame from './games/BugCatchGame'
 import FlappyGame from './games/FlappyGame'
+import SpaceDodgerGame from './games/SpaceDodgerGame'
+import TetrisGame from './games/TetrisGame'
+import BreakoutGame from './games/BreakoutGame'
+import SudokuGame from './games/SudokuGame'
+import WordSearchGame from './games/WordSearchGame'
+import WordScrambleGame from './games/WordScrambleGame'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -82,6 +88,12 @@ function App() {
           <Route path="/anaglyph/maze" element={<AnaglyphMazeGame />} />
           <Route path="/anaglyph/bug-catch" element={<BugCatchGame />} />
           <Route path="/anaglyph/flappy" element={<FlappyGame />} />
+          <Route path="/anaglyph/space-dodger" element={<SpaceDodgerGame />} />
+          <Route path="/anaglyph/tetris" element={<TetrisGame />} />
+          <Route path="/anaglyph/breakout" element={<BreakoutGame />} />
+          <Route path="/anaglyph/sudoku" element={<SudokuGame />} />
+          <Route path="/anaglyph/word-search" element={<WordSearchGame />} />
+          <Route path="/anaglyph/word-scramble" element={<WordScrambleGame />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>

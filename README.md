@@ -18,6 +18,12 @@ Live at: https://manojchandrak.github.io/amblyopia-vision-trainer/
   - **Anaglyph Maze** — walls and ball drawn in opposite colors; requires binocular fusion
   - **Bug Catch** — dichoptic contrast training, weak-eye stimuli drawn bolder
   - **Flappy Wing** — a Flappy-Bird-style game where the bird and pipes are in opposite colors
+  - **Space Dodger** — steer a ship (weak eye) through asteroids (strong eye)
+  - **Dichoptic Blocks** — falling-blocks game: the falling piece is weak-eye, the stack is strong-eye
+  - **Brick Breaker** — ball in the weak eye's color, paddle and bricks in the strong eye's
+  - **Dichoptic Sudoku** — each clue is drawn for one eye only; your answers use the weak eye's color
+  - **Word Search** — every grid letter is drawn for one eye only
+  - **Word Scramble** — timed unscrambling with letters alternating between the eyes
 - **Guide** — what amblyopia is, how dichoptic training works, and where to get red-blue glasses
 - **Settings** — pick your weaker eye and whether you have glasses; saved to this device via
   localStorage

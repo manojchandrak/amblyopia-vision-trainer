@@ -1,0 +1,339 @@
+.arcade-stage {
+  position: relative;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+}
+
+.arcade-stage.narrow {
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.arcade-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  cursor: crosshair;
+}
+
+.arcade-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 5;
+}
+
+.arcade-overlay p {
+  color: #ddd;
+  max-width: 340px;
+  margin: 0;
+}
+
+.arcade-hud {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.arcade-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: #000;
+  flex-wrap: wrap;
+}
+
+.arcade-controls button {
+  min-width: 56px;
+  padding: 10px 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 10px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.arcade-controls button:active {
+  background: #333;
+}
+
+/* ---- Puzzle games (DOM based): --weak and --strong are set inline on the stage ---- */
+
+.puzzle-stage {
+  background: #000;
+  color: #fff;
+  padding: 20px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.puzzle-stage .row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.puzzle-stage .pbtn {
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  background: #1c1c1c;
+  border: 1px solid #555;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.puzzle-stage .pbtn:hover {
+  background: #2c2c2c;
+}
+
+.puzzle-stage .pbtn.primary {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.puzzle-stage select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #1c1c1c;
+  color: #fff;
+  border: 1px solid #555;
+  font-size: 0.95rem;
+}
+
+.puzzle-msg {
+  min-height: 1.4em;
+  margin: 0;
+  color: #ddd;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+.weak-text {
+  color: var(--weak);
+}
+
+.strong-text {
+  color: var(--strong);
+}
+
+/* Sudoku */
+
+.sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: min(100%, 396px);
+  aspect-ratio: 1;
+  border: 3px solid var(--strong);
+}
+
+.sudoku-cell {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  font-size: clamp(1rem, 4.6vw, 1.6rem);
+  font-weight: 700;
+  font-family: inherit;
+  background: #000;
+  border: 1px solid color-mix(in srgb, var(--strong) 35%, #000);
+  cursor: pointer;
+  color: var(--weak);
+}
+
+.sudoku-cell.band-r {
+  border-right: 3px solid var(--strong);
+}
+
+.sudoku-cell.band-b {
+  border-bottom: 3px solid var(--strong);
+}
+
+.sudoku-cell.given-strong {
+  color: var(--strong);
+  cursor: default;
+}
+
+.sudoku-cell.given-weak {
+  color: var(--weak);
+  cursor: default;
+}
+
+.sudoku-cell.related {
+  background: color-mix(in srgb, var(--weak) 14%, #000);
+}
+
+.sudoku-cell.selected {
+  background: color-mix(in srgb, var(--weak) 38%, #000);
+}
+
+.sudoku-cell.wrong {
+  outline: 2px dashed var(--weak);
+  outline-offset: -3px;
+}
+
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: min(100%, 396px);
+}
+
+.numpad button {
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--weak);
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.numpad button:hover {
+  background: #222;
+}
+
+/* Word search */
+
+.ws-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  gap: 2px;
+}
+
+.ws-cell {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  font-size: clamp(0.9rem, 4.2vw, 1.4rem);
+  font-weight: 700;
+  font-family: inherit;
+  background: #000;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.ws-cell.weak {
+  color: var(--weak);
+}
+
+.ws-cell.strong {
+  color: var(--strong);
+}
+
+.ws-cell.start {
+  background: color-mix(in srgb, var(--weak) 40%, #000);
+}
+
+.ws-cell.found {
+  background: color-mix(in srgb, var(--weak) 22%, #000);
+  box-shadow: inset 0 0 0 2px var(--strong);
+}
+
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  justify-content: center;
+  max-width: 420px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.word-list .done {
+  text-decoration: line-through;
+  opacity: 0.45;
+}
+
+/* Word scramble */
+
+.tiles {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 56px;
+}
+
+.tile {
+  width: 48px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: inherit;
+  background: #0b0b0b;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.tile.weak {
+  color: var(--weak);
+}
+
+.tile.strong {
+  color: var(--strong);
+}
+
+.tile.used {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.tile.slot {
+  border-style: dashed;
+  border-color: var(--strong);
+}
+
+.tile.slot.filled {
+  border-style: solid;
+  border-color: var(--weak);
+}
+
+.scramble-hint {
+  color: #bbb;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.scramble-timer {
+  color: #fff;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
