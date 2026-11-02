@@ -20,6 +20,10 @@ import BreakoutGame from './games/BreakoutGame'
 import SudokuGame from './games/SudokuGame'
 import WordSearchGame from './games/WordSearchGame'
 import WordScrambleGame from './games/WordScrambleGame'
+import Game2048 from './games/Game2048'
+import WordGuessGame from './games/WordGuessGame'
+import MemoryMatchGame from './games/MemoryMatchGame'
+import PixelRunnerGame from './games/PixelRunnerGame'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -94,6 +98,10 @@ function App() {
           <Route path="/anaglyph/sudoku" element={<SudokuGame />} />
           <Route path="/anaglyph/word-search" element={<WordSearchGame />} />
           <Route path="/anaglyph/word-scramble" element={<WordScrambleGame />} />
+          <Route path="/anaglyph/2048" element={<Game2048 />} />
+          <Route path="/anaglyph/word-guess" element={<WordGuessGame />} />
+          <Route path="/anaglyph/memory" element={<MemoryMatchGame />} />
+          <Route path="/anaglyph/pixel-runner" element={<PixelRunnerGame />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>

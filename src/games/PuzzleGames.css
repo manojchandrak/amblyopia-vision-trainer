@@ -1,0 +1,140 @@
+/* ---- 2048 ---- */
+.g2048-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  padding: 8px;
+  border: 3px solid var(--strong);
+  border-radius: 12px;
+  touch-action: none;
+  user-select: none;
+}
+
+.g2048-tile {
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: clamp(1.1rem, 6vw, 1.9rem);
+  border: 2px solid color-mix(in srgb, var(--strong) 20%, #000);
+}
+
+.g2048-tile.filled {
+  color: var(--weak);
+  border-color: var(--strong);
+  box-shadow: 0 0 calc(4px + var(--glow) * 16px) color-mix(in srgb, var(--strong) 70%, transparent);
+  text-shadow: 0 0 calc(var(--glow) * 12px) var(--weak);
+}
+
+.g2048-tile.filled.swap {
+  color: var(--strong);
+  border-color: var(--weak);
+  box-shadow: 0 0 calc(4px + var(--glow) * 16px) color-mix(in srgb, var(--weak) 70%, transparent);
+  text-shadow: 0 0 calc(var(--glow) * 12px) var(--strong);
+}
+
+/* ---- Memory match ---- */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 10px;
+  width: min(100%, 380px);
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background: #000;
+  border: 2px solid #444;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.memory-card svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+.memory-card.shown.weak {
+  color: var(--weak);
+  border-color: var(--weak);
+}
+
+.memory-card.shown.strong {
+  color: var(--strong);
+  border-color: var(--strong);
+}
+
+.memory-card.matched {
+  opacity: 0.55;
+}
+
+/* ---- Word guess ---- */
+.wg-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  width: min(100%, 300px);
+}
+
+.wg-cell {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 6vw, 1.8rem);
+  border: 2px solid #333;
+  border-radius: 6px;
+}
+
+.wg-cell.weak { color: var(--weak); }
+.wg-cell.strong { color: var(--strong); }
+.wg-cell.typed.weak { border-color: var(--weak); }
+.wg-cell.typed.strong { border-color: var(--strong); }
+.wg-cell.hit { border-width: 4px; }
+.wg-cell.hit.weak { border-color: var(--weak); box-shadow: 0 0 10px var(--weak); }
+.wg-cell.hit.strong { border-color: var(--strong); box-shadow: 0 0 10px var(--strong); }
+.wg-cell.near { border-style: dashed; }
+.wg-cell.near.weak { border-color: var(--weak); }
+.wg-cell.near.strong { border-color: var(--strong); }
+.wg-cell.miss { opacity: 0.35; }
+
+.wg-keys {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: min(100%, 420px);
+}
+
+.wg-keyrow {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.wg-key {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  font-weight: 700;
+  color: #fff;
+  background: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 6px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.wg-key.wide {
+  flex: 1.6;
+  font-size: 0.8rem;
+}
+
+.wg-key.hit { background: #3a3a3a; border-color: #fff; }
+.wg-key.near { border-style: dashed; border-color: #fff; }
+.wg-key.miss { opacity: 0.3; }

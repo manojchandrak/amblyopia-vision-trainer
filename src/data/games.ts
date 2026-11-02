@@ -165,4 +165,48 @@ export const anaglyphGames: GameMeta[] = [
     howTo:
       'Put on your glasses. Click the letters (or type them) in the right order to spell the word. Correct answers add time to the clock.',
   },
+  {
+    id: '2048',
+    to: '/anaglyph/2048',
+    name: 'Dichoptic 2048',
+    icon: '🔢',
+    skill: 'Binocular reading & planning',
+    description:
+      'Slide and merge tiles to reach 2048. Each tile’s frame is drawn for one eye and its number for the other, swapping at every doubling.',
+    howTo:
+      'Put on your glasses. Swipe or use the arrow keys to slide every tile. Equal tiles merge into one. Keep merging to reach 2048.',
+  },
+  {
+    id: 'word-guess',
+    to: '/anaglyph/word-guess',
+    name: 'Word Guess',
+    icon: '🔡',
+    skill: 'Binocular reading',
+    description:
+      'Guess the five-letter word in six tries. Letters alternate between your eyes, and hints are shown by border style so they survive the colour split.',
+    howTo:
+      'Put on your glasses. Type or tap a five-letter word and press Enter. A solid thick frame means right letter, right spot; dashed means right letter, wrong spot; faint means not in the word.',
+  },
+  {
+    id: 'memory',
+    to: '/anaglyph/memory',
+    name: 'Memory Match',
+    icon: '🃏',
+    skill: 'Binocular matching & memory',
+    description:
+      'Flip cards to find matching shapes. Every shape appears once in each eye’s colour, so you must combine both views to match them.',
+    howTo:
+      'Put on your glasses. Flip two cards at a time. A pair is a match when the shapes are the same, even though their colours differ. Clear the board in as few moves as you can.',
+  },
+  {
+    id: 'pixel-runner',
+    to: '/anaglyph/pixel-runner',
+    name: 'Pixel Runner',
+    icon: '🏃',
+    skill: 'Binocular fusion & timing',
+    description:
+      'A side-scrolling platformer. The runner is drawn for your weaker eye and the ground, coins and spiky walkers for your stronger eye.',
+    howTo:
+      'Put on your glasses. Tap, click or press Space to jump (hold for a higher jump). Collect coins, hop over gaps, and land on walkers to stomp them.',
+  },
 ]

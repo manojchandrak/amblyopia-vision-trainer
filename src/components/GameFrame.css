@@ -69,3 +69,22 @@
   overflow: hidden;
   position: relative;
 }
+
+.fullscreen-btn {
+  margin-top: 12px;
+}
+
+.game-stage:fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  border: 0;
+  border-radius: 0;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.game-stage:fullscreen .arcade-stage {
+  max-height: 100vh;
+  width: min(100vw, calc(100vh * 1.5));
+}

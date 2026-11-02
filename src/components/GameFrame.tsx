@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import type { ReactNode } from 'react'
+import { useRef, type ReactNode } from 'react'
+import { useWakeLock } from '../hooks/useWakeLock'
 import './GameFrame.css'
 
 interface Props {
@@ -23,6 +24,15 @@ export default function GameFrame({
   children,
   needsGlasses,
 }: Props) {
+  useWakeLock()
+  const stageRef = useRef<HTMLDivElement>(null)
+  const canFullscreen = typeof document !== 'undefined' && document.fullscreenEnabled
+
+  function toggleFullscreen() {
+    if (document.fullscreenElement) void document.exitFullscreen()
+    else void stageRef.current?.requestFullscreen?.({ navigationUI: 'hide' })
+  }
+
   return (
     <section className="section">
       <div className="container">
@@ -57,7 +67,14 @@ export default function GameFrame({
 
         <p className="how-to">{meta.howTo}</p>
 
-        <div className="card game-stage">{children}</div>
+        <div className="card game-stage" ref={stageRef}>
+          {children}
+        </div>
+        {canFullscreen && (
+          <button type="button" className="btn fullscreen-btn" onClick={toggleFullscreen}>
+            ⛶ Full screen
+          </button>
+        )}
       </div>
     </section>
   )

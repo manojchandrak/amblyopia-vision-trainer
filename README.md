@@ -24,6 +24,10 @@ Live at: https://manojchandrak.github.io/amblyopia-vision-trainer/
   - **Dichoptic Sudoku** — each clue is drawn for one eye only; your answers use the weak eye's color
   - **Word Search** — every grid letter is drawn for one eye only
   - **Word Scramble** — timed unscrambling with letters alternating between the eyes
+  - **Dichoptic 2048** — each tile's frame is one eye's colour and its number the other's
+  - **Word Guess** — five-letter guessing; letters alternate eyes, hints shown by border style
+  - **Memory Match** — every shape appears once in each eye's colour
+  - **Pixel Runner** — side-scrolling platformer: runner for the weak eye, world for the strong eye
 - **Guide** — what amblyopia is, how dichoptic training works, and where to get red-blue glasses
 - **Settings** — pick your weaker eye and whether you have glasses; saved to this device via
   localStorage
@@ -42,6 +46,10 @@ and would break the channel separation.
 React 19 + TypeScript + Vite, react-router-dom (hash history, for static GitHub Pages hosting).
 Games are built with React state/hooks driving positioned DOM/SVG elements (via
 `requestAnimationFrame` for continuous motion) rather than raw `<canvas>` drawing.
+
+## Install on a phone (PWA)
+
+Open the live site in Chrome (Android) or Safari (iPhone) and choose **Add to Home Screen**. It then runs full screen, works offline after the first visit, and keeps the screen awake during games.
 
 ## Development
 
